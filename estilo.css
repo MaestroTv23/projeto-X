@@ -1,0 +1,177 @@
+/* Zera as margens, preenchimentos e define o modelo de caixa para todos os elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --text-color: white;
+    --bg-url: url(./fotos-projeto-X/bg-mobile.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.05); 
+    --surface-color-hover: rgba(0, 0, 0, 0.2);
+    --highlight--color: rgba(255, 255, 255, 0.2);
+    --switch-bg-url: url(./fotos-projeto-x/moon-stars.svg);
+}
+
+.light{
+    --text-color: black;
+    --bg-url: url(./fotos-projeto-X/bg-mobile-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover: rgba(0, 0, 0, 0.2);
+    --highlight--color: rgba(0, 0, 0, 0.308);
+    --switch-bg-url: url(./fotos-projeto-x/sun.svg);
+}
+
+/* Define o estilo do plano de fundo do corpo da página */
+body {
+    background: var(--bg-url) no-repeat top center/cover ;
+}
+
+/* Define a fonte e a cor de texto padrão para todos os elementos dentro do corpo */
+body * {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-color);
+}
+
+/* Define o estilo do contêiner principal */
+#container{
+    width: 360px;
+    margin:56px auto 0px; 
+}
+
+/* Define o estilo do perfil */
+#profile{
+    text-align: center; 
+    padding: 24px; 
+}
+
+/* Define o estilo da imagem do perfil */
+#profile img{
+    width: 112px; 
+}
+
+/* Define o estilo do texto do perfil */
+#profile p {
+    padding-top: 8px; 
+    font-weight: 500; 
+    font-size: 16px; 
+    line-height: 24px; 
+}
+
+/*switch*/
+
+#switch {
+    width: 64px;
+    position: relative;
+    margin: 4px auto;
+}
+
+#switch span {
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
+    border-radius: 9999px;
+}
+
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border-radius: 50%;
+    border: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    z-index: 1;
+    transform: translateY(-50%);
+}
+
+.light #switch button {
+    right: 0;
+    left: initial;
+}
+
+
+/* Define o estilo da lista de links */
+ul {
+    padding: 24px 0px; 
+    list-style: none; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 16px; /* Adiciona espaço entre os itens da lista */
+}
+
+/* Define o estilo dos links dentro da lista */
+ul li a {
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    padding: 16px 24px; 
+    background: var(--surface-color); /* Define um fundo semi-transparente */
+    border: 1px solid var(--stroke-color); /* Adiciona uma borda semi-transparente */
+    border-radius: 6px; 
+    text-decoration: none; /* Remove a decoração de texto padrão */
+    font-weight: 500; 
+    transition: background 0.5s; /* Adiciona uma transição ao fundo para criar efeito hover */
+}
+
+/* Define o estilo do hover dos links */
+ul li a:hover {
+    background: var(--surface-color-hover); 
+    border: 1.5px solid var(--text-color); 
+}
+
+/* Define o estilo dos links de mídias sociais */
+#social-links {
+    display: flex; 
+    justify-content: center; 
+    padding: 24px 0px; 
+    font-size: 24px; 
+    gap: 35px; 
+}
+
+/* Define o estilo dos links de mídias sociais */
+#social-links a {
+    position: relative; 
+    display: inline-flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+/* Define o estilo do círculo semi-transparente ao redor dos ícones */
+#social-links a::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%; 
+    height: 120%; 
+    background-color: var(--highlight--color); /* Define a cor do círculo */
+    border-radius: 50%; 
+    opacity: 0; /* Torna o círculo inicialmente invisível */
+    transition: opacity 0.5s; /* Adiciona uma transição para suavizar a mudança de opacidade */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Adiciona um efeito de sombra */
+    padding: 5px;
+}
+
+/* Define o estilo dos ícones */
+#social-links ion-icon {
+    font-size: 24px; 
+}
+
+/* Define o estilo do círculo ao passar o mouse por cima dos ícones */
+#social-links a:hover::before {
+    opacity: 1; /* Torna o círculo visível quando o mouse passa por cima */
+}
+
+footer{
+    padding: 24px 0px;
+    text-align: center;
+    font-size: 14px;
+}
