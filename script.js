@@ -22,4 +22,14 @@ function toggleMode() {
             }
 };
 
+let likes = 0;
+let hasLiked = false;
 
+function likePage() {
+  if (!hasLiked) {
+    likes++;
+    document.getElementById('like-count-number').textContent = likes;
+    document.getElementById('like-button').classList.add('liked');
+    hasLiked = true;
+  }
+}
