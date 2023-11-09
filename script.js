@@ -8,7 +8,7 @@ function toggleMode() {
 
 
         const img = document.querySelector("#profile img") 
-            if (html.classList.contains("light")) {
+            if (html.classList.contains("lvb ight")) {
                 img.setAttribute("src", "./fotos-projeto-X/avatar-light.png")
             }   else {
                 img.setAttribute("src", "./fotos-projeto-X/avatar.png")
