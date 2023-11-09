@@ -28,6 +28,7 @@
 /* Define o estilo do plano de fundo do corpo da página */
 body {
     background: var(--bg-url) no-repeat top center/cover ;
+    height: 100vh;
 }
 
 /* Define a fonte e a cor de texto padrão para todos os elementos dentro do corpo */
@@ -38,7 +39,8 @@ body * {
 
 /* Define o estilo do contêiner principal */
 #container{
-    width: 360px;
+    width: 100%;
+    max-width: 580px;
     margin:56px auto 0px; 
 }
 
@@ -174,4 +176,14 @@ footer{
     padding: 24px 0px;
     text-align: center;
     font-size: 14px;
+}
+
+@media (min-wdth: 700px) {
+    :root{
+        --bg-url: url(./fotos-projeto-X/bg-desktop.jpg); 
+    }
+
+    .light {
+        --bg-url: url(./fotos-projeto-X/bg-desktop-light.jpg);
+    }
 }
